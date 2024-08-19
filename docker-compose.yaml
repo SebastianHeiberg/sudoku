@@ -5,8 +5,11 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./backend/src:/app/src
+      - backend_deps:/root/.m2  # Volume for Maven dependencies
     ports:
       - "8080:8080"  # Expose the application on port 8080
     environment:
       - SPRING_PROFILES_ACTIVE=dev
 
+volumes:
+  backend_deps:

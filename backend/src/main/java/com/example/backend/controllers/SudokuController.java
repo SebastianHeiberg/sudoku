@@ -8,14 +8,9 @@ public class SudokuController {
 
 @GetMapping("/sudoku")
 public String hello() {
-    //hello
-    //hello
-    //hello
-    //hello
-    //hello
-    //hello
-    return "Hello from SudokuController, and reload 2 2 2 4";
+    return "Hello from SudokuControllers";
 }
 
 
 }
+

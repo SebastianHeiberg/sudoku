@@ -12,15 +12,13 @@ RUN mvn dependency:go-offline
 
 # Copy the source files
 COPY ./src /app/src
-COPY ./docker-compose.yaml /app/docker-compose.yml
-
-
-# Install inotify-tools
-RUN apt-get update && apt-get install -y inotify-tools
 
 # Copy the entrypoint script
 COPY ./docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
 
-# Specify the entrypoint script
+# edit this in, if you want to run a devopment mode.
+# It uses polling to detect changes in the source code, and will rebuild the project
+# The spring boot dev tool, the reloads the application
+# It is consumeing a lot of resources, because i did not get inotify to work sadly
 ENTRYPOINT ["/docker-entrypoint.sh"]
