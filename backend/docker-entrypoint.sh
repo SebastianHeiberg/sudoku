@@ -18,7 +18,6 @@ LAST_MOD_TIME=$(date +%s)
       LAST_MOD_TIME=$MOD_TIME
     fi
 
-    # Sleep for 5 seconds before checking again
     sleep 5
   done
 ) &
